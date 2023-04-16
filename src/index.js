@@ -20,8 +20,12 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  if (process.env.NODE_ENV !== 'production') {
+    mainWindow.webContents.openDevTools();
+  }
 };
+
+//"start": "electron-forge start",
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

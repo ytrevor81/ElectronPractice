@@ -3,7 +3,7 @@
   "productName": "Electron Practice",
   "version": "1.0.0",
   "description": "My Electron application description",
-  "main": "src/index.js",
+  "main": "src/main/main.js",
   "scripts": {
     "start:dev": "cross-env NODE_ENV=development electron-forge start",
     "start:prod": "cross-env NODE_ENV=production electron-forge start",

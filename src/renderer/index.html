@@ -4,15 +4,17 @@
       <meta charset="UTF-8">
       <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Hello World!</title>
-      <link rel="stylesheet" href="index.css" />
+      <title>Electron App</title>
+      <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
       <div class="container">
           <h1>Lets get this party started</h1>
-          <!-- Your app's content and components go here -->
+          
+          <chat-input></chat-input>
+          <response-box></response-box>
       </div>
 
-      <script src="renderer.js"></script>
+      <script type="module" src="renderer.js"></script>
   </body>
 </html>

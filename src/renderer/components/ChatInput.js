@@ -11,8 +11,9 @@ class ChatInput extends HTMLElement {
   
     render() {
       this.innerHTML = `
-        <div>
-          <h1>Chat Input Test</h1>
+        <div class="chat-input">
+          <h5>Chat Input Test</h5>
+          <input></input>
         </div>
       `;
     }

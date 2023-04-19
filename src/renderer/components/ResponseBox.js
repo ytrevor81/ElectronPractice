@@ -11,8 +11,9 @@ class ResponseBox extends HTMLElement {
   
     render() {
       this.innerHTML = `
-        <div>
-          <h1>Response Box Test</h1>
+        <div class= "response-box">
+          <h5>Response Box Test</h5>
+          <h6>Box here</h6>
         </div>
       `;
     }

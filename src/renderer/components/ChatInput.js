@@ -1,7 +1,6 @@
 class ChatInput extends HTMLElement {
     constructor() {
       super();
-      // Your component initialization code here
     }
   
     connectedCallback() {
@@ -16,8 +15,23 @@ class ChatInput extends HTMLElement {
           <input></input>
         </div>
       `;
+
+      this.querySelector('input').addEventListener('input', (event) =>  {
+        if (this.onInput) {
+          this.onInput(event.target.value);
+        }
+      });
+    }
+
+    set onInput(callback) {
+      this._onInput = callback;
+    }
+
+    get onInput(){
+      return this._onInput;
     }
   }
+
 
   customElements.define('chat-input', ChatInput);
 

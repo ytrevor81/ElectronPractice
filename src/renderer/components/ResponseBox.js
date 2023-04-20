@@ -1,7 +1,6 @@
 class ResponseBox extends HTMLElement {
     constructor() {
       super();
-      // Your component initialization code here
     }
   
     connectedCallback() {
@@ -16,6 +15,10 @@ class ResponseBox extends HTMLElement {
           <h6>Box here</h6>
         </div>
       `;
+    }
+
+    setMessage(message){
+      this.querySelector('h6').textContent = message;
     }
   }
 

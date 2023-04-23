@@ -1,13 +1,21 @@
-import { requireTaskPool } from 'electron-remote';
+const { runTask } = window.electronAPI;
+
 import ChatInput from './components/ChatInput.js';
 import ResponseBox from './components/ResponseBox.js';
-
-const sendToChatGPT = requireTaskPool(require.resolve('../backend/openaiApi.js')).sendToChatGPT;
 
 const chatInput = document.querySelector('chat-input');
 const responseBox = document.querySelector('response-box');
 
-chatInput.onInput = async (message) => {
-    const response = await sendToChatGPT(message);
-    responseBox.setMessage(response);
-}
+// (async () => {
+//     try {
+//       const result = await runTask('../backend/openaiApi.js', ['arg1', 'arg2']);
+//       console.log(result.stdout);
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   })();
+
+// chatInput.onInput = async (message) => {
+//     const response = await sendToChatGPT(message);
+//     responseBox.setMessage(response);
+// }

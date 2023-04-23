@@ -1,4 +1,5 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
+const { execFile } = require('child_process');
 const path = require('path');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -13,8 +14,23 @@ const createWindow = () => {
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
+      contextIsolation: true
     },
   });
+
+  
+//Expose run-task to renderer.js
+ipcMain.handle('run-task', async (event, filePath, args) => {
+  return new Promise((resolve, reject) => {
+    execFile(filePath, args, (error, stdout, stderr) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve({stdout, stderr});
+      }
+    });
+  });
+});
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, './renderer/index.html'));
@@ -24,8 +40,6 @@ const createWindow = () => {
     mainWindow.webContents.openDevTools();
   }
 };
-
-//"start": "electron-forge start",
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

@@ -1,5 +1,6 @@
-const { runTask } = window.electronAPI;
+// const { runTask } = window.electronAPI;
 
+// import { ipcRenderer } from 'electron';
 import ChatInput from './components/ChatInput.js';
 import ResponseBox from './components/ResponseBox.js';
 
@@ -19,3 +20,6 @@ const responseBox = document.querySelector('response-box');
 //     const response = await sendToChatGPT(message);
 //     responseBox.setMessage(response);
 // }
+
+
+

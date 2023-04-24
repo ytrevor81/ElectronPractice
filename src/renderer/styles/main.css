@@ -10735,4 +10735,12 @@ body {
   align-items: center;
 }
 
+.gpt-main-container {
+  padding-top: 10vh;
+}
+
+.centered {
+  text-align: center;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -12,24 +12,25 @@ class ChatInput extends HTMLElement {
       this.innerHTML = `
         <div class="chat-input">
           <h5>Chat Input Test</h5>
-          <input></input>
+          <input id="inputText"></input>
+          <button id="submitButton">Submit</button>
         </div>
       `;
 
-      this.querySelector('input').addEventListener('input', (event) =>  {
-        if (this.onInput) {
-          this.onInput(event.target.value);
-        }
-      });
+      // this.querySelector('input').addEventListener('input', (event) =>  {
+      //   if (this.onInput) {
+      //     this.onInput(event.target.value);
+      //   }
+      // });
     }
 
-    set onInput(callback) {
-      this._onInput = callback;
-    }
+    // set onInput(callback) {
+    //   this._onInput = callback;
+    // }
 
-    get onInput(){
-      return this._onInput;
-    }
+    // get onInput(){
+    //   return this._onInput;
+    // }
   }
 
 

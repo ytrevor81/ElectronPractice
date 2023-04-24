@@ -1,7 +1,7 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+import openAI from 'openai';
 
-const openAI = require('openai');
-
+dotenv.config();
 openAI.apiKey = process.env.OPEN_AI_API_KEY;
 
 async function sendToChatGPT(prompt) {

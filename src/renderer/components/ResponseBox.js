@@ -12,13 +12,13 @@ class ResponseBox extends HTMLElement {
       this.innerHTML = `
         <div class= "response-box">
           <h5>Response Box Test</h5>
-          <h6>Box here</h6>
+          <h6 class="response-content">Response here</h6>
         </div>
       `;
     }
 
-    setMessage(message){
-      this.querySelector('h6').textContent = message;
+    displayResponse(message){
+      this.querySelector('.response-content').innerText = message;
     }
   }
 

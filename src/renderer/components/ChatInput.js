@@ -22,6 +22,10 @@ class ChatInput extends HTMLElement {
       //     this.onInput(event.target.value);
       //   }
       // });
+
+      this.querySelector('button').addEventListener('button', (event) => {
+        console.log("Im working");
+      })
     }
 
     // set onInput(callback) {

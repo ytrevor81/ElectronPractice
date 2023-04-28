@@ -1,4 +1,3 @@
-
 import ChatInput from './components/ChatInput.js';
 import ResponseBox from './components/ResponseBox.js';
 import UploadFiles from './components/UploadFiles.js';
@@ -13,7 +12,7 @@ uploadFiles.addEventListener('files-to-convert', async (event) => {
     const files = event.detail;
     // Add your file conversion logic here
     const convertedText = await convertFilesToText(files);
-    responseBox.setResponse(convertedText);
+    responseBox.displayResponse(convertedText);
   });
 
   async function convertFilesToText(files) {

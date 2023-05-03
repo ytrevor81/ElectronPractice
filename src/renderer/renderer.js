@@ -6,14 +6,17 @@ const chatInput = document.querySelector('chat-input');
 const responseBox = document.querySelector('response-box');
 const uploadFiles = document.querySelector('upload-files');
 
+chatInput.addEventListener('files-convert', async () => {
+  const files = await uploadFiles.getFiles();
 
+  if (!files) {
+    alert('No files selected');
+    return;
+  }
 
-uploadFiles.addEventListener('files-to-convert', async (event) => {
-    const files = event.detail;
-    // Add your file conversion logic here
-    const convertedText = await convertFilesToText(files);
-    responseBox.displayResponse(convertedText);
-  });
+  const convertedText = await convertFilesToText(files);
+  responseBox.displayResponse(convertedText);
+});
 
   async function convertFilesToText(files) {
     // Your file conversion logic goes here

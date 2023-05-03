@@ -16,25 +16,11 @@ class ChatInput extends HTMLElement {
           <button id="submitButton">Submit</button>
         </div>
       `;
-
-      // this.querySelector('input').addEventListener('input', (event) =>  {
-      //   if (this.onInput) {
-      //     this.onInput(event.target.value);
-      //   }
-      // });
-
-      this.querySelector('button').addEventListener('button', (event) => {
-        console.log("Im working");
+      
+      this.querySelector('#submitButton').addEventListener('click', () => {
+        this.dispatchEvent(new CustomEvent('files-convert'));
       })
-    }
-
-    // set onInput(callback) {
-    //   this._onInput = callback;
-    // }
-
-    // get onInput(){
-    //   return this._onInput;
-    // }
+    }    
   }
 
 
